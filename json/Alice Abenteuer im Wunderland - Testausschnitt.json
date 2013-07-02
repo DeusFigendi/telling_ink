@@ -1,0 +1,143 @@
+{
+    "status_string": "Done",
+    "image": "https://auphonic.com/api/download/audio-upload/QQBYwbUn7Tvb7hENK8R7jS/02.png",
+    "creation_time": "2013-03-04T11:58:54.684Z",
+    "chapters": [],
+    "edit_page": "https://auphonic.com/engine/upload/edit/QQBYwbUn7Tvb7hENK8R7jS",
+    "channels": 2,
+    "warning_message": "",
+    "samplerate": 44100,
+    "output_files": [
+        {
+            "outgoing_services": [
+                "ebAzG99VFew77Dtx2g48Q5"
+            ],
+            "suffix": "",
+            "format": "vorbis",
+            "checksum": "ebbe24ea6a28e86b3cffd0382fc4afcf",
+            "size_string": "2.2 MB",
+            "download_url": "https://auphonic.com/api/download/audio-result/QQBYwbUn7Tvb7hENK8R7jS/Alice Abenteuer im Wunderland - Testausschnitt.ogg",
+            "ending": "ogg",
+            "split_on_chapters": false,
+            "filename": "Alice Abenteuer im Wunderland - Testausschnitt.ogg",
+            "bitrate": 96,
+            "mono_mixdown": false,
+            "size": 2284321
+        },
+        {
+            "outgoing_services": [
+                "ebAzG99VFew77Dtx2g48Q5"
+            ],
+            "suffix": "",
+            "format": "mp3",
+            "checksum": "de2fe53ae356713c3ad1dbd42dddb57f",
+            "size_string": "1.6 MB",
+            "download_url": "https://auphonic.com/api/download/audio-result/QQBYwbUn7Tvb7hENK8R7jS/Alice Abenteuer im Wunderland - Testausschnitt.mp3",
+            "ending": "mp3",
+            "split_on_chapters": false,
+            "filename": "Alice Abenteuer im Wunderland - Testausschnitt.mp3",
+            "bitrate": 64,
+            "mono_mixdown": true,
+            "size": 1627204
+        },
+        {
+            "outgoing_services": [
+                "ebAzG99VFew77Dtx2g48Q5"
+            ],
+            "suffix": "",
+            "format": "descr",
+            "checksum": "",
+            "size_string": "",
+            "download_url": null,
+            "ending": "json",
+            "split_on_chapters": false,
+            "filename": "Alice Abenteuer im Wunderland - Testausschnitt.json",
+            "bitrate": 0,
+            "mono_mixdown": false,
+            "size": 0
+        },
+        {
+            "outgoing_services": [
+                "ebAzG99VFew77Dtx2g48Q5"
+            ],
+            "suffix": "",
+            "format": "image",
+            "checksum": "f24f3f3d0d1cbd1c5ef7c20717a9d2e6",
+            "size_string": "68.1 KB",
+            "download_url": "https://auphonic.com/api/download/audio-result/QQBYwbUn7Tvb7hENK8R7jS/Alice Abenteuer im Wunderland - Testausschnitt.png",
+            "ending": "png",
+            "split_on_chapters": false,
+            "filename": "Alice Abenteuer im Wunderland - Testausschnitt.png",
+            "bitrate": 0,
+            "mono_mixdown": false,
+            "size": 69684
+        }
+    ],
+    "uuid": "QQBYwbUn7Tvb7hENK8R7jS",
+    "service": null,
+    "warning_status": null,
+    "has_video": false,
+    "error_status": null,
+    "thumbnail": "https://auphonic.com/api/download/audio-upload/QQBYwbUn7Tvb7hENK8R7jS/thumbnail.jpg",
+    "metadata": {
+        "album": "Alice's Abenteuer im Wunderland",
+        "publisher": "Johann Friedrich Hartknoch",
+        "subtitle": "",
+        "license": "Creative Commons Attribution 3.0 Germany",
+        "artist": "Lewis Carroll, Antonie Zimmermann, Deus Figendi",
+        "track": "0",
+        "title": "Testdatei",
+        "summary": "",
+        "url": "http://www.gutenberg.org/files/19778/19778-h/19778-h.htm",
+        "license_url": "http://creativecommons.org/licenses/by/3.0/de/",
+        "append_chapters": false,
+        "year": "1869",
+        "genre": "Audiobook",
+        "tags": [
+            "Audiobook",
+            "cc-by",
+            "Alice",
+            "Wonderland",
+            "Publicdomain",
+            "gutenbergproject"
+        ]
+    },
+    "status": 3,
+    "input_file": "Alice Abenteuer im Wunderland - Testausschnitt.flac",
+    "status_page": "https://auphonic.com/engine/status/QQBYwbUn7Tvb7hENK8R7jS",
+    "length_timestring": "00:03:14.235",
+    "bitrate": 0,
+    "output_basename": "Alice Abenteuer im Wunderland - Testausschnitt",
+    "outgoing_services": [
+        {
+            "outgoing": true,
+            "incoming": true,
+            "uuid": "ebAzG99VFew77Dtx2g48Q5",
+            "error_message": "",
+            "base_url": "http://deusf.ara.uberspace.de/audiobook/TEMP/",
+            "host": "ara.uberspace.de",
+            "result_urls": [],
+            "path": "/var/www/virtual/deusf/html/audiobook/TEMP",
+            "result_page": null,
+            "display_name": "Uberspace/audiobook",
+            "type": "sftp",
+            "port": 22,
+            "transfer_success": false
+        }
+    ],
+    "change_time": "2013-03-04T12:01:00.111Z",
+    "error_message": "",
+    "waveform_image": "https://auphonic.com/api/download/audio-result/QQBYwbUn7Tvb7hENK8R7jS/waveform.png",
+    "length": 194.23507936507937,
+    "algorithms": {
+        "normloudness": true,
+        "loudnesstarget": -16,
+        "denoise": true,
+        "denoiseamount": 18,
+        "hipfilter": true,
+        "leveler": true
+    },
+    "start_allowed": false,
+    "change_allowed": true,
+    "format": "flac"
+}

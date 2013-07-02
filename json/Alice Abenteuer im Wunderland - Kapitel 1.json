@@ -1,0 +1,143 @@
+{
+    "status_string": "Done",
+    "image": "https://auphonic.com/api/download/audio-upload/pKdDCuWkdM7ZDHK8SNgMnd/p001.png",
+    "creation_time": "2013-03-18T14:52:32.634Z",
+    "chapters": [],
+    "edit_page": "https://auphonic.com/engine/upload/edit/pKdDCuWkdM7ZDHK8SNgMnd",
+    "channels": 2,
+    "warning_message": "",
+    "samplerate": 44100,
+    "output_files": [
+        {
+            "outgoing_services": [
+                "ebAzG99VFew77Dtx2g48Q5"
+            ],
+            "suffix": "",
+            "format": "vorbis",
+            "checksum": "d808961ae87e64253cb1e39405f54e7f",
+            "size_string": "11.5 MB",
+            "download_url": "https://auphonic.com/api/download/audio-result/pKdDCuWkdM7ZDHK8SNgMnd/Alice Abenteuer im Wunderland - Kapitel 1.ogg",
+            "ending": "ogg",
+            "split_on_chapters": false,
+            "filename": "Alice Abenteuer im Wunderland - Kapitel 1.ogg",
+            "bitrate": 96,
+            "mono_mixdown": false,
+            "size": 12104827
+        },
+        {
+            "outgoing_services": [
+                "ebAzG99VFew77Dtx2g48Q5"
+            ],
+            "suffix": "_low",
+            "format": "mp3",
+            "checksum": "479769d9b7476b628c2a04d1d43a7ae7",
+            "size_string": "8.4 MB",
+            "download_url": "https://auphonic.com/api/download/audio-result/pKdDCuWkdM7ZDHK8SNgMnd/Alice Abenteuer im Wunderland - Kapitel 1_low.mp3",
+            "ending": "mp3",
+            "split_on_chapters": false,
+            "filename": "Alice Abenteuer im Wunderland - Kapitel 1_low.mp3",
+            "bitrate": 64,
+            "mono_mixdown": true,
+            "size": 8760264
+        },
+        {
+            "outgoing_services": [
+                "ebAzG99VFew77Dtx2g48Q5"
+            ],
+            "suffix": "",
+            "format": "descr",
+            "checksum": "",
+            "size_string": "",
+            "download_url": null,
+            "ending": "json",
+            "split_on_chapters": false,
+            "filename": "Alice Abenteuer im Wunderland - Kapitel 1.json",
+            "bitrate": 0,
+            "mono_mixdown": false,
+            "size": 0
+        },
+        {
+            "outgoing_services": [
+                "ebAzG99VFew77Dtx2g48Q5"
+            ],
+            "suffix": "",
+            "format": "image",
+            "checksum": "50244a3153eb19e87d83e88371ff6d55",
+            "size_string": "43.0 KB",
+            "download_url": "https://auphonic.com/api/download/audio-result/pKdDCuWkdM7ZDHK8SNgMnd/Alice Abenteuer im Wunderland - Kapitel 1.png",
+            "ending": "png",
+            "split_on_chapters": false,
+            "filename": "Alice Abenteuer im Wunderland - Kapitel 1.png",
+            "bitrate": 0,
+            "mono_mixdown": false,
+            "size": 44071
+        }
+    ],
+    "uuid": "pKdDCuWkdM7ZDHK8SNgMnd",
+    "service": null,
+    "warning_status": null,
+    "has_video": false,
+    "error_status": null,
+    "thumbnail": "https://auphonic.com/api/download/audio-upload/pKdDCuWkdM7ZDHK8SNgMnd/thumbnail.jpg",
+    "metadata": {
+        "album": "Alice's Abenteuer im Wunderland",
+        "publisher": "Johann Friedrich Hartknoch",
+        "subtitle": "",
+        "license": "Creative Commons Attribution 3.0 Germany",
+        "artist": "Lewis Carroll, Antonie Zimmermann, Deus Figendi, Evan LE NY",
+        "track": "01",
+        "title": "Hinunter in den Kaninchenbau",
+        "summary": "Das nte Kapitel \"Kapitelname\"\r\n\r\nErklärende Worte oder Zusammenfassung.\r\n\r\nGeschrieben wurde das Buch von Lewis Carroll\r\nIns Deutsche übersetzt von Antonie Zimmermann\r\nDie Musik stammt von Evan LE NY und ist cc-by-nc-nd lizensiert\r\nUnd gesprochen hat Deus Figendi",
+        "url": "http://www.gutenberg.org/files/19778/19778-h/19778-h.htm",
+        "license_url": "http://creativecommons.org/licenses/by/3.0/de/",
+        "append_chapters": false,
+        "year": "1869",
+        "genre": "Audiobook",
+        "tags": [
+            "Audiobook",
+            "cc-by",
+            "Alice",
+            "Wonderland",
+            "Publicdomain",
+            "gutenbergproject"
+        ]
+    },
+    "status": 3,
+    "input_file": "Alice Abenteuer im Wunderland - Kapitel 1.flac",
+    "status_page": "https://auphonic.com/engine/status/pKdDCuWkdM7ZDHK8SNgMnd",
+    "length_timestring": "00:18:08.303",
+    "bitrate": 0,
+    "output_basename": "Alice Abenteuer im Wunderland - Kapitel 1",
+    "outgoing_services": [
+        {
+            "outgoing": true,
+            "incoming": true,
+            "uuid": "ebAzG99VFew77Dtx2g48Q5",
+            "error_message": "",
+            "base_url": "http://deusf.ara.uberspace.de/audiobook/TEMP/",
+            "host": "ara.uberspace.de",
+            "result_urls": [],
+            "path": "/var/www/virtual/deusf/html/audiobook/TEMP",
+            "result_page": null,
+            "display_name": "Uberspace/audiobook",
+            "type": "sftp",
+            "port": 22,
+            "transfer_success": false
+        }
+    ],
+    "change_time": "2013-03-18T15:03:28.121Z",
+    "error_message": "",
+    "waveform_image": "https://auphonic.com/api/download/audio-result/pKdDCuWkdM7ZDHK8SNgMnd/waveform.png",
+    "length": 1088.303015873016,
+    "algorithms": {
+        "normloudness": true,
+        "loudnesstarget": -16,
+        "denoise": true,
+        "denoiseamount": 18,
+        "hipfilter": true,
+        "leveler": true
+    },
+    "start_allowed": false,
+    "change_allowed": true,
+    "format": "flac"
+}

@@ -1,0 +1,253 @@
+@font-face {
+	font-family: 'Conv_Denise_Handwriting';
+	src: url('fonts/Denise_Handwriting.eot');
+	src: local('☺'), url('fonts/Denise_Handwriting.woff') format('woff'), url('fonts/Denise_Handwriting.ttf') format('truetype'), url('fonts/Denise_Handwriting.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	font-family:sans-serif;
+}
+
+a {
+	color:inherit;
+	/*font-family: 'Conv_Denise_Handwriting';*/
+}
+
+a.handwritten, .handwritten a {
+	font-family: 'Conv_Denise_Handwriting';
+	font-size:150%;
+}
+
+a.typewritten, typewritten a {
+	font-family: 'sans-serif';
+}
+
+.tabletimeindex {
+	font-family: 'Conv_Denise_Handwriting';
+	vertical-align: 'sub';
+}
+
+nav#top_nav ul li {
+	display:inline-block;
+	font-weight:bold;
+	font-family:fantasy, sans-serif;
+	color:#008;
+	text-decoration:none;
+	padding:0 1em;
+	border-left:solid;
+	border-right:solid;
+}
+
+nav#books_nav {
+	float:left;
+}
+
+nav#books_nav ul li  {
+	/*
+	font-size:small;
+	color:#dd0;
+	background-image:url('./images/bg_bookshelf.png');
+	min-height:1em;
+	*/
+	list-style:none;
+	padding: 0.2em 1em 0.2em 1em;
+	vertical-align:middle;
+	max-width:150px;
+}
+
+nav#books_nav ul li a {
+	font-weight:bold;
+	color:#008;
+	text-decoration:none;
+}
+
+#maincontent {
+	float:left;
+	max-width:50%;
+	margin: 0 2em 2em 2em;
+}
+
+#metadata {
+	/* margin: 0 2em 2em 2em; */
+	overflow:hidden;
+}
+
+.table_like_list {
+	display: table;
+}
+.table_like_list li {
+	display: table-row;
+}
+.table_like_list li a, .table_like_list li img, .table_like_list li span {
+	display: table-cell;
+	padding-right:1em;
+}
+
+#comment_form label {
+	display:block;
+	font-weight:bold;
+}
+#comment_form label span {
+	display:block;
+	font-weight:normal;
+	font-size:xx-small;
+}
+
+#comment_email {
+	position:fixed;
+	top:-10em;
+}
+
+#comment_emoil {
+	display:none;
+}
+
+#comment_website {
+	position:absolute;
+	right:8000px;
+}
+
+#comment_area {
+	width:1px;
+	height:1px;
+	visibility:hidden;
+}
+
+#comment_comon {
+	display:block;
+	width:100%;
+	height:10em;
+}
+
+.spamcomment {
+	display:none;
+}
+
+.comment {
+	min-height:4em;
+	vertical-align:bottom;
+	margin-bottom:1em;
+}
+
+.commenter {
+	padding:0 1em 1em 1em;
+	float:left;
+}
+
+.blogroll {
+	clear:both;
+	margin:1em;
+}
+.blogroll h3 {
+	float:left;
+	width:30%;
+	margin:0 1em 1em 1em;
+}
+
+footer {
+	clear:both;
+}
+
+#episode_cover {
+	float:right;
+	max-width:50%;
+	margin:1em;
+	-webkit-transform:rotate(-12deg);
+	box-shadow: 10px 10px 5px #888;
+	transform:rotate(-12deg);
+}
+
+.playbutton {
+	cursor:pointer;
+	font-size:large;
+}
+
+.list_avatar {
+	width:3em;
+}
+
+.avatar_big {
+	float:left;
+	max-width:50%;
+}
+
+/*
+li:hover .list_avatar {
+*/
+	/*
+	width:5em;
+	*/
+	/*
+	display:block;
+	float:left;
+	*/
+/*
+}
+*/
+
+.hidden_elements {
+	/*
+	display:none;
+	*/
+	font-size:small;
+}
+
+/*
+li:hover .hidden_elements {
+*/
+	/*
+	display:block;
+	*/
+	/*
+	position:absolute;
+	right:1em;
+	top:1em;
+	
+	background-color:#eee;
+	border:solid;
+	z-index = 100;
+	*/
+/*
+}
+*/
+
+.person_list li {
+	position:relative;
+	left:1em;
+}
+
+.person_list li.list_subheader {
+	font-weight:bold;
+	left:0;
+}
+
+.social_icon {
+	width:1em;
+}
+.social_icon_big {
+	height:3em;
+}
+
+/*
+ * 
+#top_nav {
+	background-color:#ffd;
+}
+#books_nav {
+	background-color:#fdf;
+}
+#maincontent {
+	background-color:#dff;
+}
+#metadata {
+	background-color:#dfd;
+}
+*/
+
+footer {
+	background-color:rgba(221,221,221,0.5);
+	margin-left:50px;
+}
+
