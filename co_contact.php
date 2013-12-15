@@ -47,7 +47,36 @@
 			verwende heißt <a href="http://www.dafont.com/denise.font?l[]=10">
 			Denise Handwriting</a> und wurde von <a href="http://budeni.com/">
 			Denise Busch</a> erstellt.</li>
-		</ul>';
+		</ul>
+		<h2>Technisches</h2>
+		<p>Diese Webseite hat (noch) kein Backend, stattdessen wird ihr Inhalt
+		ausschließlich durch <a href="https://auphonic.com/">Auphonic</a>
+		gespeist. Alle Metadaten werden dort eingegeben und dann hier irgendwie
+		umgesetzt.</p>
+		<p>Wie das geschieht kann man
+		<a href="https://github.com/DeusFigendi/telling_ink">auf GitHub</a>
+		nachlesen, denn ich habe
+		<a href="https://github.com/DeusFigendi/telling_ink">die Software
+		zu diesem Projekt dort publiziert</a>. Wahrscheinlich wird niemand
+		direkt etwas damit anfangen können oder es forken wollen, aber
+		vielleicht möchte sich jemand ansehen <strong>wie</strong> ich die
+		Metadaten auslese und verarbeite oder wie ich meinen Webplayer
+		gebaut habe oder warum man alle Episoden eines Buchs am Stück
+		abspielen kann. Schön ist das Projekt auf keinen Fall, aber ich
+		bin es leid Code aus Scham für mich zu behalten.</p>
+		<p>Das Thema &quot;Flattr&quot; ist auch irgendwie ein technisches,
+		denn vielleicht wird euch auffallen, dass nicht jede Episode einen
+		Flattr-Button hat. Ich habe zwar vor auch bei Inhalten fremder
+		schamlos auch dafür Geld zu nehmen, aber ich habe auch vor Inhalte
+		zu publizieren, die non-commercial sind und diesen Wunsch werde ich
+		selbstverständlich respektieren und in dem Fall taucht weder im Feed
+		noch auf der Webseite ein Flattr-Button auf.</p>
+		<p>Die Episoden dieses Podcasts erscheinen in verschiedenen Audio-
+		Formaten, vielleicht erscheint nicht jede Episode in jedem Format,
+		aber die Feeds liefern jede Verfügbare Episode aus, im Zweifel
+		eben in einem anderen als dem gewünschten Format,
+		<a href="./feed.php">wie man auf der Feed-Seite nachlesen kann.</a>
+		</p>';
 	$content['episode'][1] = '
 	<h2>Impressum</h2>
 	<div id="hcard-Kai-Uwe-Kramer" class="vcard">
@@ -55,10 +84,10 @@
 		<span class="fn">Kai-Uwe Kramer</span>
 		<a class="email" href="mailto:deusfigendi@dnd-gate.de">deusfigendi@dnd-gate.de</a>
 		<div class="adr">
-			<div class="street-address">Immenstraße 14</div>
-			<span class="locality">Bad Salzuflen</span>
+			<div class="street-address">Weberplatz 10</div>
+			<span class="locality">Lage</span>
 			, 
-			<span class="postal-code">32108</span>
+			<span class="postal-code">32791</span>
 
 			<span class="country-name">D</span>
 

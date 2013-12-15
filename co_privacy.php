@@ -50,7 +50,10 @@
 		eine URL manuell weiter zu geben.<br />
 		Sollte es dennoch einmal dazu kommen werde ich sie Datensparsam
 		einbinden (z.B. 2click-Lösung) und ebenfalls hier darüber
-		informieren.</p>
+		informieren.<br />
+		Auch die Flattr-Buttons in diesem Webangebot, sind datensparsam
+		eingebunden, wer nicht darauf klickt, dessen Daten werden von
+		Flattr auch nicht erfasst.</p>
 		
 		<p>Im Übrigen verweist dieses Angebot an einigen Stellen auf
 		fremde Angebote, wenn Sie einen solchen Hyperlink besuchen
@@ -77,7 +80,7 @@
 		<h2>Sichtbare Daten</h2>
 		<p>Wenn sie die Kommentar-Funktion dieses Angebots verwenden,
 		werden alle dort eingegebenen Daten (Nickname, Mailadresse und
-		Inhalt gespeichert und darüber hinaus der Zeitpunkt zu dem der
+		Inhalt) gespeichert und darüber hinaus der Zeitpunkt zu dem der
 		Kommentar gesendet wurde, die Seite unter der der Kommentar
 		geschrieben wurde (also z.B. unter welches Buch oder welche
 		Episode/Kapitel) und darüber hinaus ob Ihr Beitrag als Spam

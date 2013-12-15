@@ -113,6 +113,27 @@
 		
 		$content['title'] = urldecode($_REQUEST['b']);
 		
+		$content['head_attributes']['prefix'] = 'tellingink: http://talkingink.de/ns#';
+		$content['html_attributes']['prefix'] = 'og: http://ogp.me/ns#';
+		$metaelement['property'] = 'og:title';
+		$metaelement['content'] = urldecode($_REQUEST['b']);
+		$content['meta'][]['attributes'] = $metaelement;
+		$metaelement['property'] = 'og:type';
+		$metaelement['content'] = 'tellingink:audiobook';
+		$content['meta'][]['attributes'] = $metaelement;
+		$metaelement['property'] = 'og:url';
+		$metaelement['content'] = $_SERVER["SCRIPT_URI"]."?b=".$episodes_object['album'];
+		$content['meta'][]['attributes'] = $metaelement;
+		$metaelement['property'] = 'og:image';
+		$metaelement['content'] = preg_replace ( "/\/index\.php.*/" , "" , $_SERVER["SCRIPT_URI"] ) . $episodes_object['image'];
+		$content['meta'][]['attributes'] = $metaelement;
+		$metaelement['property'] = 'og:locale';
+		$metaelement['content'] = 'de_DE';
+		$content['meta'][]['attributes'] = $metaelement;
+		$metaelement['property'] = 'og:site_name';
+		$metaelement['content'] = 'telling ink';
+		$content['meta'][]['attributes'] = $metaelement;
+		
 		$content['episode'][1] = '<h3>Metadaten</h3><p>Social-Kram</p><ul><li>Liste</li><li>beteiligter</li><li>Personen</li></ul><p>Tags</p><p>Lizenz</p><p>Aufnahmedatum</p>';
 		
 		
@@ -165,6 +186,11 @@
 				<img src="./images/btn_flattr.png" alt="Flattr '.urldecode($_REQUEST['b']).'" />';
 			$content['episode'][1] .= '
 				</a>
+				<p>
+					BitCoins spenden unter
+					<br />
+					<span style="font-size:small; letter-spacing:-0.3em;" >12KQoNxeBbd3nQrEemGwuoGRWww6JeSLdc</span>
+				</p>
 			</div>';
 			
 		} //end of "flattrble?"
@@ -225,7 +251,11 @@
 				<li>
 					<a href="./?p='.(int)$person_object['pid'].'">';
 			if (strlen($person_object['image']) > 1) {
-				$content['episode'][1] .= '<img src="./images/'.$person_object['image'].'" class="list_avatar" alt="" /> ';
+				if (strpos($person_object['image'],"http") === 0) {
+					$content['episode'][1] .= '<img src="'.$person_object['image'].'" class="list_avatar" alt="" /> ';
+				} else {
+					$content['episode'][1] .= '<img src="./images/'.$person_object['image'].'" class="list_avatar" alt="" /> ';
+				}
 			}
 			if (strlen($person_object['nickname']) > 1) {
 				$display_name = $person_object['nickname'];
@@ -347,6 +377,9 @@
 			} else if ($lic_id == 1) {
 				$content['episode'][1] .= '
 			<br /><a href="http://creativecommons.org/licenses/by/3.0/de/" title="Creative Commons Namensnennung 3.0 Deutschland Lizenz."><img src="./images/lic_ccby.svg" alt="creative commons by" /></a>';
+			} else if ($lic_id == 7) {
+				$content['episode'][1] .= '
+			<br /><a href="http://creativecommons.org/licenses/by-nc-sa/3.0/de/" title="Creative Commons Namensnennung-NichtKommerziell-Weitergabe unter gleichen Bedingungen 3.0 Deutschland Lizenz."><img src="./images/lic_ccbyncsa.svg" alt="creative commons by" /></a>';
 			} else if ($lic_id == 16) {
 				$content['episode'][1] .= '
 			<br /><a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" title="Creative Commons Namensnennung-NichtKommerziell-KeineBearbeitung 3.0 Unported"><img src="./images/lic_ccbyncnd.svg" alt="creative commons by-nc-nd" /></a>';
@@ -495,7 +528,13 @@
 				<li>
 					<a href="./?p='.(int)$person_object['pid'].'">';
 			if (strlen($person_object['image']) > 1) {
-				$content['episode'][1] .= '<img src="./images/'.$person_object['image'].'" class="list_avatar" alt="" /> ';
+				
+				if (strpos($person_object['image'],"http") === 0) {
+					$content['episode'][1] .= '<img src="'.$person_object['image'].'" class="list_avatar" alt="" /> ';
+				} else {
+					$content['episode'][1] .= '<img src="./images/'.$person_object['image'].'" class="list_avatar" alt="" /> ';
+				}
+				
 			}
 			if (strlen($person_object['nickname']) > 1) {
 				$display_name = $person_object['nickname'];
@@ -658,7 +697,11 @@
 		
 		
 		if (strlen($persons_object->image) > 1) {
-			$episode0_after .= '<img src="./images/'.$persons_object->image.'" class="avatar_big" alt="" /> ';
+				if (strpos($persons_object->image,"http") === 0) {
+					$episode0_after .= '<img src="'.$persons_object->image.'" class="avatar_big" alt="" /> ';
+				} else {
+					$episode0_after .= '<img src="./images/'.$persons_object->image.'" class="avatar_big" alt="" /> ';
+				}
 		}
 		if (strlen($persons_object->nickname) > 1) {
 			$display_name = $persons_object->nickname;
@@ -837,7 +880,11 @@
 				<li>
 					<a href="./?p='.(int)$person_object['pid'].'">';
 			if (strlen($person_object['image']) > 1) {
-				$content['episode'][1] .= '<img src="./images/'.$person_object['image'].'" class="list_avatar" alt="" /> ';
+				if (strpos($person_object['image'],"http") === 0) {
+					$content['episode'][1] .= '<img src="'.$person_object['image'].'" class="list_avatar" alt="" /> ';
+				} else {
+					$content['episode'][1] .= '<img src="./images/'.$person_object['image'].'" class="list_avatar" alt="" /> ';
+				}
 			}
 			if (strlen($person_object['nickname']) > 1) {
 				$display_name = $person_object['nickname'];
@@ -955,7 +1002,7 @@
 		$comment['target'] = $episode_object -> eid;
 		$comment['ttext'] = $episode_object -> title;
 		
-		$content['title'] = $episode_object -> title;
+		$content['title'] = urldecode($episode_object -> album .' - '. $episode_object -> title);
 		
 		$content['episode'][1] = '<h3>Metadaten</h3><p>Social-Kram</p><ul><li>Liste</li><li>beteiligter</li><li>Personen</li></ul><p>Tags</p><p>Lizenz</p><p>Aufnahmedatum</p>';
 		
@@ -975,6 +1022,11 @@
 				<img src="./images/btn_flattr.png" alt="Flattr '.urldecode($episode_object -> title).'" />';
 			$content['episode'][1] .= '
 				</a>
+				<p>
+					BitCoins spenden unter
+					<br />
+					<span style="font-size:small; letter-spacing:-0.3em;" >12KQoNxeBbd3nQrEemGwuoGRWww6JeSLdc</span>
+				</p>
 			</div>';
 			
 			if (!isset($_REQUEST['e'])) {
@@ -989,6 +1041,11 @@
 				<img src="./images/btn_flattr.png" alt="Flattr telling ink" />';
 				$content['episode'][1] .= '
 				</a>
+				<p>
+					BitCoins spenden unter
+					<br />
+					<span style="font-size:small; letter-spacing:-0.3em;" >12KQoNxeBbd3nQrEemGwuoGRWww6JeSLdc</span>
+				</p>
 			</div>';
 			}
 		} 
@@ -1048,7 +1105,11 @@
 				<li>
 					<a href="./?p='.(int)$person_object['pid'].'">';
 			if (strlen($person_object['image']) > 1) {
-				$content['episode'][1] .= '<img src="./images/'.$person_object['image'].'" class="list_avatar" alt="" /> ';
+				if (strpos($person_object['image'],"http") === 0) {
+					$content['episode'][1] .= '<img src="'.$person_object['image'].'" class="list_avatar" alt="" /> ';
+				} else {
+					$content['episode'][1] .= '<img src="./images/'.$person_object['image'].'" class="list_avatar" alt="" /> ';
+				}
 			}
 			if (strlen($person_object['nickname']) > 1) {
 				$display_name = $person_object['nickname'];

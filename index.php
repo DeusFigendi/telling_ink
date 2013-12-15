@@ -35,9 +35,21 @@ include ('co_foot.php');
 include ('co_random.php');
 
 echo ('<!DOCTYPE html>
-<html>
-	<head>
-		<title>'.(array_key_exists('title',$content)?$content['title']:'Mein Titel').'</title>
+<html ');
+if (array_key_exists('html_attributes',$content)) {
+	foreach ($content['html_attributes'] as $key => $value) {
+		echo ($key.'="'.$value.'" ');
+	}
+}
+echo ('>
+	<head ');
+if (array_key_exists('head_attributes',$content)) {
+	foreach ($content['head_attributes'] as $key => $value) {
+		echo ($key.'="'.$value.'" ');
+	}
+}
+echo ('>
+		<title>'.(array_key_exists('title',$content)?$content['title']:'Telling Ink').'</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />');
 
 

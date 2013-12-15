@@ -159,6 +159,8 @@ $rdc_debug = true;
 			
 			if (preg_match("/^C(reative )?C(ommons )?-?(Attribution|by)[0-9\. ]*(Germany|de)/",$json_object -> metadata -> license)) {
 				$database_entry['license'] = 1;
+			} elseif (preg_match("/^C(reative )?C(ommons )?-?(Attribution|by)-?(NonCommercial|nc)-?(ShareAlike|sa)[0-9\. ]*(Germany|de)/",$json_object -> metadata -> license)) {
+				$database_entry['license'] = 7;
 			} elseif (preg_match("/^C(reative )?C(ommons )?-?(Attribution|by)-?(NonCommercial|nc)-?(NoDerivs|nd)[0-9\. ]*(Unported|$)/",$json_object -> metadata -> license)) {
 				$database_entry['license'] = 16;
 			} else {
