@@ -226,6 +226,12 @@ $rdc_debug = true;
 				if ($tag_text == "nocommercial") { $database_entry['flattr'] = 0; }
 				if ($tag_text == "no commercial") { $database_entry['flattr'] = 0; }
 				if ($tag_text == "nc") { $database_entry['flattr'] = 0; }
+				if ($tag_text == "ccbync") { $database_entry['flattr'] = 0; }
+				if ($tag_text == "ccbyncnd") { $database_entry['flattr'] = 0; }
+				if ($tag_text == "ccbyncsa") { $database_entry['flattr'] = 0; }
+				if ($tag_text == "cc-by-nc") { $database_entry['flattr'] = 0; }
+				if ($tag_text == "cc-by-nc-nd") { $database_entry['flattr'] = 0; }
+				if ($tag_text == "cc-by-nc-sa") { $database_entry['flattr'] = 0; }
 				if ($tag_text == "noflattr") { $database_entry['flattr'] = 0; }
 				if ($tag_text == "no flattr") { $database_entry['flattr'] = 0; }
 				if ($tag_text == "guest") { $database_entry['flattr'] = 0; }

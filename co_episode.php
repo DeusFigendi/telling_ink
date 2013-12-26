@@ -72,38 +72,52 @@
 		$episode0_after .= "<table class=\"of_content handwritten\">";
 		foreach ($episode_array as $episodes_object) {
 		
-			$episode0_after .= '
-					<tr>
+			$episode01_after .= '
+					<tr ';
+			$episode02_after .= '
 						<td><span class="playbutton" onclick="play_pressed(this);" title="'.urlencode('{"eid":"'.$episodes_object['eid'].'","album":"'.$episodes_object['album'].'","title":"'.$episodes_object['title'].'","image":"'.$episodes_object['image'].'",');
+			$episode01_after .= '
+					data-eid=         "'.(int)$episodes_object['eid'].'"
+					data-albumtitle=  "'.urlencode($episodes_object['album']).'"
+					data-episodetitle="'.urlencode($episodes_object['title']).'"
+					data-imageurl=    "'.$episodes_object['image'].'"';
 			
-			$episode0_after .= urlencode('"audiofiles":[');
+			$episode02_after .= urlencode('"audiofiles":[');
+
 			
 			$first_run = true;
 				
 			
 			foreach ($episodes_object['audiofiles'] as $audio_filearray) {
 				
-				if ($first_run) { $first_run = false; } else { $episode0_after .=','; }
-				$episode0_after .= urlencode('"'.$audio_filearray['filename'].'"');
+				if ($first_run) { $first_run = false; } else { $episode02_after .=','; }
+				$episode02_after .= urlencode('"'.$audio_filearray['filename'].'"');
+				$episode01_after .= '
+					data-audiofile_'.$audio_filearray['format'].'="'.$audio_filearray['filename'].'" ';
 			}
 			
-			$episode0_after .= urlencode(']');
-			$episode0_after .= urlencode(',"row_no":'.(int)$episodes_object['row_no'].'}').'">▷</span></td>';
+			$episode02_after .= urlencode(']');
+			$episode02_after .= urlencode(',"row_no":'.(int)$episodes_object['row_no'].'}').'">▷</span></td>';
+			$episode01_after .= '
+					data-rowno="'.(int)$episodes_object['row_no'].'" 
+					data-length="'.(int)$episodes_object['length'].'" 
+					data-trackno="'.(int)$episodes_object['track'].'" ';
 			
 			$human_readable_time = $episodes_object['length']."s";
 			if ($episodes_object['length'] > 100  ) { $human_readable_time = round($episodes_object['length']/60).'min'; }
 			if ($episodes_object['length'] > 10000) { $human_readable_time = round($episodes_object['length']/3600).'h'; }
 			
 						
-			$episode0_after .= '
+			$episode02_after .= '
 						<td><a href="./index.php?e='.(int)$episodes_object['eid'].'">'.$episodes_object['track'].' '.$episodes_object['title'].'</a> <span class="tabletimeindex">('.$human_readable_time.')</span></td>';	
 			$random_audiofile = rand(1,count($episodes_object['audiofiles']))-1;
 			$random_audiofile = $episodes_object['audiofiles'][$random_audiofile];
 			
-			$episode0_after .= '
+			$episode02_after .= '
 						<td><a href="./audio/'.rawurlencode($random_audiofile['filename']).'">⤋ ('.human_byte($random_audiofile['filesize']).')</a></td>';
 					
-			$episode0_after .= '
+			$episode01_after .= ' >';
+			$episode0_after .= $episode01_after.$episode02_after.'
 					</tr>';
 		}
 		
