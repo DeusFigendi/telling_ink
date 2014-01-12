@@ -1052,7 +1052,7 @@
 			$content['episode'][1] .= '
 				Diese Episode flattrn
 				<br />
-				<img src="./images/btn_flattr.png" alt="Flattr '.urldecode($episode_object -> title).'" />';
+				<img src="./images/btn_flattr.png" alt="Flattr '.urldecode($episode_object -> title).'" /><span class="flattrcount">'.$episode_object -> flattrs.'</span>';
 			$content['episode'][1] .= '
 				</a>
 				<p>
@@ -1066,7 +1066,7 @@
 				$content['episode'][1] .= '
 			<div>';
 				$content['episode'][1] .= '
-				<a href="https://flattr.com/submit/auto?user_id=deusfigendi&amp;url='.rawurlencode(str_replace("index.php","",$_SERVER["SCRIPT_URI"])).'&amp;title='.rawurlencode($episode_object -> title).'&amp;description='.rawurlencode("Lesung des Kapitels ".urldecode($episode_object -> title)." aus ".urldecode($episode_object -> album)).'&amp;language=de_DE&amp;tags=audiobook,podcast,hörbuch,hoerbuch,freecontent,audio&amp;category=audio">';
+				<a href="https://flattr.com/submit/auto?user_id=deusfigendi&amp;url='.rawurlencode(str_replace("index.php","",$_SERVER["SCRIPT_URI"])).'&amp;title='.rawurlencode($episode_object -> title).'&amp;description='.rawurlencode("Telling Ink").'&amp;language=de_DE&amp;tags=audiobook,podcast,hörbuch,hoerbuch,freecontent,audio&amp;category=audio">';
 		
 				$content['episode'][1] .= '
 				Telling Ink flattrn

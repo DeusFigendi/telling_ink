@@ -13,5 +13,5 @@
 	} elseif ($random_includition < 75) {
 		include('rd_removespam.php');		
 	}
-	//$content['foot'] .= " $random_includition ";
+	$content['foot'] .= " $random_includition ";
 ?>
