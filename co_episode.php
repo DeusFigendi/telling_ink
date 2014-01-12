@@ -69,12 +69,16 @@
 			$episode_array[$e_key]['audiofiles'] = audiofiles_get($episodes_object['eid']);
 		}
 		
+		$content['script'][]['uri'] = "./extend_toc_of_book.js";
+		
+		
+		
 		$episode0_after .= "<table class=\"of_content handwritten\">";
 		foreach ($episode_array as $episodes_object) {
 		
-			$episode01_after .= '
+			$episode01_after = '
 					<tr ';
-			$episode02_after .= '
+			$episode02_after = '
 						<td><span class="playbutton" onclick="play_pressed(this);" title="'.urlencode('{"eid":"'.$episodes_object['eid'].'","album":"'.$episodes_object['album'].'","title":"'.$episodes_object['title'].'","image":"'.$episodes_object['image'].'",');
 			$episode01_after .= '
 					data-eid=         "'.(int)$episodes_object['eid'].'"
@@ -93,7 +97,8 @@
 				if ($first_run) { $first_run = false; } else { $episode02_after .=','; }
 				$episode02_after .= urlencode('"'.$audio_filearray['filename'].'"');
 				$episode01_after .= '
-					data-audiofile_'.$audio_filearray['format'].'="'.$audio_filearray['filename'].'" ';
+					data-'.$audio_filearray['format'].'_filename="'.$audio_filearray['filename'].'" 
+					data-'.$audio_filearray['format'].'_filesize="'.$audio_filearray['filesize'].'" ';
 			}
 			
 			$episode02_after .= urlencode(']');
@@ -114,7 +119,7 @@
 			$random_audiofile = $episodes_object['audiofiles'][$random_audiofile];
 			
 			$episode02_after .= '
-						<td><a href="./audio/'.rawurlencode($random_audiofile['filename']).'">⤋ ('.human_byte($random_audiofile['filesize']).')</a></td>';
+						<td class="downloadlink"><a href="./audio/'.rawurlencode($random_audiofile['filename']).'">⤋ ('.human_byte($random_audiofile['filesize']).')</a></td>';
 					
 			$episode01_after .= ' >';
 			$episode0_after .= $episode01_after.$episode02_after.'
@@ -168,13 +173,27 @@
 				<a href="https://flattr.com/submit/auto?user_id=deusfigendi&amp;url='.rawurlencode($_SERVER["SCRIPT_URI"]."?".$_SERVER["QUERY_STRING"]).'&amp;title='.rawurlencode(urldecode($_REQUEST['b'])).'&amp;description='.rawurlencode("Lesung des Buchs ".urldecode($_REQUEST['b']).". Ein Hörbuch").'&amp;language=de_DE&amp;tags=audiobook,podcast,hörbuch,hoerbuch,freecontent,audio&amp;category=audio">';
 		*/
 			$content['episode'][1] .= '
-				<a href="https://flattr.com/submit/auto?user_id=deusfigendi&amp;url='.rawurlencode($_SERVER["SCRIPT_URI"]."?b=".$episodes_object['album']).'&amp;title='.rawurlencode(urldecode($_REQUEST['b'])).'&amp;description='.rawurlencode("Lesung des Buchs ".urldecode($_REQUEST['b']).". Ein Hörbuch").'&amp;language=de_DE&amp;tags=audiobook,podcast,hörbuch,hoerbuch,freecontent,audio&amp;category=audio">';
+				<a href="https://flattr.com/submit/auto?user_id=deusfigendi&amp;url='.rawurlencode($_SERVER["SCRIPT_URI"]."?b=".rawurlencode($episodes_object['album'])).'&amp;title='.rawurlencode(urldecode($_REQUEST['b'])).'&amp;description='.rawurlencode("Lesung des Buchs ".urldecode($_REQUEST['b']).". Ein Hörbuch").'&amp;language=de_DE&amp;tags=audiobook,podcast,hörbuch,hoerbuch,freecontent,audio&amp;category=audio">';
 
 //<atom:link rel="payment" href="
 //https://flattr.com/submit/auto?url=https%3A%2F%2Fdevelopers.flattr.net%2F&amp;user_id=flattr" type="text/html" />				
 //https://flattr.com/submit/auto?user_id=deusfigendi&url=http%3A%2F%2Fwww.talkingink.de%2F%3Faction%3Depisode%26b%3DMetabuch&title=Metabuch&description=Lesung%20des%20Buchs%20Metabuch.%20Ein%20H%C3%B6rbuch&language=de_DE&tags=audiobook,podcast,h%C3%B6rbuch,hoerbuch,freecontent,audio&category=audio
 //https://flattr.com/submit/auto?user_id=deusfigendi&url=http%3A%2F%2Fwww.talkingink.de%2F%3F                   b%3DMetabuch&title=Metabuch&description=Lesung%20des%20Buchs%20Metabuch.%20Ein%20H%C3%B6rbuch&language=de_DE&tags=audiobook,podcast,h%C3%B6rbuch,hoerbuch,freecontent,audio&category=audio
+//https://flattr.com/submit/auto?user_id=deusfigendi&url=http%3A%2F%2Ftalkingink.de%2F%3Fb%3DAlice%27s%20Abenteuer%20im%20Wunderland&title=Alice%27s%20Abenteuer%20im%20Wunderland&description=Lesung%20des%20Buchs%20Alice%27s%20Abenteuer%20im%20Wunderland.%20Ein%20H%C3%B6rbuch&language=de_DE&tags=audiobook,podcast,h%C3%B6rbuch,hoerbuch,freecontent,audio&category=audio
+//https://flattr.com/submit/auto?user_id=deusfigendi&url=http%3A%2F%2Ftalkingink.de%2Findex.php%3Fe%3D24&title=Kapitel%201%20-%20Hinunter%20in%20den%20Kaninchenbau.&description=Lesung%20des%20Kapitels%20Kapitel%201%20-%20Hinunter%20in%20den%20Kaninchenbau.%20aus%20Alices%20Abenteuer%20im%20Wunderland&language=de_DE&tags=audiobook,podcast,h%C3%B6rbuch,hoerbuch,freecontent,audio&category=audio
+//https://flattr.com/submit/auto?user_id=deusfigendi&url=http%3A%2F%2Ftalkingink.de%2F%3Fb%3DAlices+Abenteuer+im+Wunderland&title=Alices%20Abenteuer%20im%20Wunderland&description=Lesung%20des%20Buchs%20Alices%20Abenteuer%20im%20Wunderland.%20Ein%20H%C3%B6rbuch&language=de_DE&tags=audiobook,podcast,h%C3%B6rbuch,hoerbuch,freecontent,audio&category=audio
 
+
+//mine:        https://flattr.com/submit/auto?user_id=deusfigendi&url=http%3A%2F%2Ftalkingink.de%2F%3Fb%3DAlice%27s%20Abenteuer%20im%20Wunderland&title=Alice%27s%20Abenteuer%20im%20Wunderland&description=Lesung%20des%20Buchs%20Alice%27s%20Abenteuer%20im%20Wunderland.%20Ein%20H%C3%B6rbuch&language=de_DE&tags=audiobook,podcast,h%C3%B6rbuch,hoerbuch,freecontent,audio&category=audio
+//flatrs(+):   https://flattr.com/submit/auto?user_id=DeusFigendi&url=http%3A%2F%2Ftalkingink.de%2F%3Fb%3DAlice%2527s%2BAbenteuer%2Bim%2BWunderland
+//flatrs(%20): https://flattr.com/submit/auto?user_id=DeusFigendi&url=http%3A%2F%2Ftalkingink.de%2F%3Fb%3DAlice%2527s%2520Abenteuer%2520im%2520Wunderland
+
+//Alice%27s%20Abenteuer%20im%20Wunderland
+//Alice%27s%20Abenteuer%20im%20Wunderland
+
+
+//old: https://flattr.com/submit/auto?user_id=deusfigendi&url=http%3A%2F%2Ftalkingink.de%2F%3Fb%3DAlice%27s%20Abenteuer%20im%20Wunderland&title=Alice%27s%20Abenteuer%20im%20Wunderland&description=Lesung%20des%20Buchs%20Alice%27s%20Abenteuer%20im%20Wunderland.%20Ein%20H%C3%B6rbuch&language=de_DE&tags=audiobook,podcast,h%C3%B6rbuch,hoerbuch,freecontent,audio&category=audio
+//new: https://flattr.com/submit/auto?user_id=deusfigendi&url=http%3A%2F%2Ftalkingink.de%2F%3Fb%3DAlice%2527s%2520Abenteuer%2520im%2520Wunderland&title=Alice%27s%20Abenteuer%20im%20Wunderland&description=Lesung%20des%20Buchs%20Alice%27s%20Abenteuer%20im%20Wunderland.%20Ein%20H%C3%B6rbuch&language=de_DE&tags=audiobook,podcast,h%C3%B6rbuch,hoerbuch,freecontent,audio&category=audio
 
 
 
@@ -421,16 +440,16 @@
 		
 		
 		
-		$episode_query = "SELECT * FROM `episodes` WHERE ";
-		$sql_query     = "SELECT * FROM `episodes` WHERE ";
+		$episode_query = "SELECT * FROM `episodes` WHERE (";
+		$sql_query     = "SELECT * FROM `episodes` WHERE (";
 		
 		foreach ($episode_list as $this_eid => $value) {
 			$episode_query .= "`eid` = '".(int)$this_eid."' OR ";
 			$sql_query     .= "`eid` = '".(int)$this_eid."' OR ";
 		}
 		
-		$episode_query .= "FALSE ".($db_conntection['hidden']?" ":"AND `hidden` = '0'")." ORDER BY `audiodate` DESC LIMIT 1";
-		$sql_query     .= "FALSE ".($db_conntection['hidden']?" ":"AND `hidden` = '0'")." ORDER BY `album` DESC LIMIT 100";
+		$episode_query .= "FALSE )".($db_conntection['hidden']?" ":"AND `hidden` = '0'")." ORDER BY `audiodate` DESC LIMIT 1";
+		$sql_query     .= "FALSE )".($db_conntection['hidden']?" ":"AND `hidden` = '0'")." ORDER BY `album` DESC LIMIT 100";
 		
 		$sql_result = mysql_query($sql_query);
 		

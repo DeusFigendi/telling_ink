@@ -40,6 +40,21 @@ nav#top_nav ul li {
 	border-right:solid;
 }
 
+ul#format_switch li {
+	display:inline-block;
+	font-family:fantasy, sans-serif;
+	font-size:small;
+	text-decoration:none;
+	padding:0 1em;
+	border:groove;
+	cursor:pointer;
+}
+
+ul#format_switch li:active {
+	border:inset;
+}
+
+
 nav#books_nav {
 	float:left;
 }
