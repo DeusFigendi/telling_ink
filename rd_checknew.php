@@ -163,6 +163,8 @@ $rdc_debug = true;
 				$database_entry['license'] = 7;
 			} elseif (preg_match("/^C(reative )?C(ommons )?-?(Attribution|by)-?(NonCommercial|nc)-?(NoDerivs|nd)[0-9\. ]*(Unported|$)/",$json_object -> metadata -> license)) {
 				$database_entry['license'] = 16;
+			} elseif (preg_match("/^C(reative )?C(ommons )?-?(zero|Zero|0) ?[0-9\. ]*(Unported|$)/",$json_object -> metadata -> license)) {
+				$database_entry['license'] = 24;
 			} else {
 				$database_entry['license'] = 0;
 			}

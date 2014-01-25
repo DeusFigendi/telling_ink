@@ -416,6 +416,9 @@
 			} else if ($lic_id == 16) {
 				$content['episode'][1] .= '
 			<br /><a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" title="Creative Commons Namensnennung-NichtKommerziell-KeineBearbeitung 3.0 Unported"><img src="./images/lic_ccbyncnd.svg" alt="creative commons by-nc-nd" /></a>';
+			} else if ($lic_id == 24) {
+				$content['episode'][1] .= '
+			<br /><a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons zero 1.0"><img src="./images/lic_cc0.svg" alt="creative commons zero" /></a>';
 			}
 		}
 			
@@ -475,6 +478,9 @@
 			} elseif ((int)$row->license == 16	) {
 				$episode0_after .= '
 					<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" title="Creative Commons Namensnennung-NichtKommerziell-KeineBearbeitung 3.0 Unported"><img src="./images/lic_ccbyncnd.svg" alt="ceative commons by-nc-nd" /></a>';				
+			} elseif ((int)$row->license == 24	) {
+				$episode0_after .= '
+					<a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons Zero 1.0"><img src="./images/lic_cc0.svg" alt="creative commons zero" /></a>';				
 			}
 			$episode0_after .= '
 				</li>';
@@ -1279,6 +1285,9 @@
 		} elseif ((int) $episode_object -> license == 16	) {
 			$content['episode'][1] .= '
 			<br /><a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" title="Creative Commons Namensnennung-NichtKommerziell-KeineBearbeitung 3.0 Unported"><img src="./images/lic_ccbyncnd.svg" alt="ceative commons by-nc-nd" /></a>';				
+		} elseif ((int) $episode_object -> license == 24	) {
+			$content['episode'][1] .= '
+			<br /><a href="http://creativecommons.org/publicdomain/zero/1.0/" title="Creative Commons Zero"><img src="./images/lic_cc0.svg" alt="ceative commons 0" /></a>';				
 		}
 		
 		
